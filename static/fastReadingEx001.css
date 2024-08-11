@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#test-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#test-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    direction: rtl;
+    height: 600px;
+    overflow: scroll;
+    width: 80%;
+}
+
+
+
+
+
+
+
+
+.container {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 60px auto 0;
+  width: 90vw;
+  min-width: 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+time {
+  font-size: 68px;
+  height: 1em;
+  line-height: 1em;
+  display: inline-block;
+  overflow: hidden;
+  animation-name: none;
+  animation-play-state: paused;
+  margin-bottom: 9px;
+  color: #fff;
+}
+
+time i,
+time b {
+  float: left;
+  font-style: normal;
+  font-weight: 100;
+  animation-name: inherit;
+  animation-play-state: inherit;
+}
+
+.container > time b {
+  height: 1em;
+  min-width: 0.3em;
+  padding-top: 0.3em;
+}
+
+.container > time b::before,
+.container > time b::after {
+  content: "";
+  display: block;
+  width: 0.08em;
+  height: 0.08em;
+  background-color: currentColor;
+  border-radius: 100%;
+  margin: 0 auto 0.29em;
+}
+
+time i::before,
+time i::after {
+  content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 0";
+  white-space: pre;
+  animation-name: inherit;
+  animation-play-state: inherit;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(10);
+  float: left;
+  margin: 0 0.02em;
+}
+
+time i:first-child::before,
+time i:nth-of-type(2)::before {
+  content: "0\A 1\A 2\A 3\A 4\A 5\A 0";
+  animation-timing-function: steps(6);
+}
+
+time i:first-child::before {
+  animation-duration: 3600s;
+}
+
+time i:first-child::after {
+  animation-duration: 600s;
+}
+
+time i:nth-of-type(2)::before {
+  animation-duration: 60s;
+}
+
+time i:nth-of-type(2)::after {
+  animation-duration: 10s;
+}
+
+time i:nth-of-type(3)::before {
+  animation-duration: 1s;
+}
+
+time i:nth-of-type(3)::after {
+  animation-duration: 100ms;
+}
+
+
+/* New CSS for buttons and full time display */
+
+
+  button {
+    font-size: 16px;
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:#333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  #fullTimeDisplay {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+  }
