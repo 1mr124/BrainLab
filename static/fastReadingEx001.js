@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const timerElem = document.getElementById('timer');
     const startButton = document.getElementById('startButton');
@@ -62,4 +63,31 @@ document.addEventListener('DOMContentLoaded', function() {
         fullTimeDisplay.textContent = 'Full Time: 00:00:00';
         readingSpeed.textContent = 'Your Speed: 0 words per minute';
     });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.querySelector('#test-container');
+    const progressText = document.getElementById('progress-text');
+
+    function updateProgressBar() {
+
+        const scrollTop = textElement.scrollTop;
+        const scrollHeight = textElement.scrollHeight;
+        const clientHeight = textElement.clientHeight;
+
+        // Calculate percentage
+        const maxScrollTop = scrollHeight - clientHeight;
+        const percentage = maxScrollTop > 0 ? (scrollTop / maxScrollTop) * 100 : 0;
+
+        // Update the text to show the percentage
+        progressText.textContent = `Progress: ${Math.round(percentage)}%`;
+    }
+
+    // Initialize the progress text
+    updateProgressBar();
+
+    // Update progress text on scroll
+    textElement.addEventListener('scroll', updateProgressBar);
 });
