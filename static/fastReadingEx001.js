@@ -4,10 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const stopButton = document.getElementById('stopButton');
     const resetButton = document.getElementById('resetButton');
     const fullTimeDisplay = document.getElementById('fullTimeDisplay');
-    
+    const readingSpeed = document.getElementById('readingSpeed');
+
     let startTime;
     let elapsedTime = 0;
     let timerInterval;
+
+    const totalWords = 1920; // Total number of words
 
     function formatTime(ms) {
         const totalSeconds = Math.floor(ms / 1000);
@@ -34,7 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function stopTimer() {
         clearInterval(timerInterval);
         timerInterval = null;
+        const totalMinutes = elapsedTime / 1000 / 60;
+        const wordsPerMinute = totalWords / totalMinutes;
         fullTimeDisplay.textContent = `Full Time: ${formatTime(elapsedTime)}`;
+        readingSpeed.textContent = `Your Speed: ${wordsPerMinute.toFixed(2)} words per minute`;
     }
 
     startButton.addEventListener('click', () => {
@@ -54,5 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         elapsedTime = 0;
         timerElem.innerHTML = '00:00:00';
         fullTimeDisplay.textContent = 'Full Time: 00:00:00';
+        readingSpeed.textContent = 'Your Speed: 0 words per minute';
     });
 });
