@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetButton = document.getElementById('resetButton');
     const fullTimeDisplay = document.getElementById('fullTimeDisplay');
     const readingSpeed = document.getElementById('readingSpeed');
+    const textElement = document.querySelector('#test-container');
+    const progressText = document.getElementById('progress-text');
+
 
     let startTime;
     let elapsedTime = 0;
@@ -63,13 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         fullTimeDisplay.textContent = 'Full Time: 00:00:00';
         readingSpeed.textContent = 'Your Speed: 0 words per minute';
     });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const textElement = document.querySelector('#test-container');
-    const progressText = document.getElementById('progress-text');
 
     function updateProgressBar() {
 
@@ -90,4 +86,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update progress text on scroll
     textElement.addEventListener('scroll', updateProgressBar);
+
+
+
+    document.getElementById('pasteButton').addEventListener('click', async function() {
+        try {
+            let text = await navigator.clipboard.readText();
+            
+            // Sanitize the clipboard content to avoid XSS
+            text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            text = text.replace(/\n/g, "<br>");
+
+            // Trim leading and trailing whitespace
+            text = text.trim();
+            // Insert the sanitized text into the div
+            textElement.innerHTML = text;
+        } catch (err) {
+            textElement.textContent('Failed to read clipboard contents: ', err);
+        }
+    });
 });
+
