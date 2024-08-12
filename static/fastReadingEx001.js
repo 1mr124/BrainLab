@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetButton = document.getElementById('resetButton');
     const fullTimeDisplay = document.getElementById('fullTimeDisplay');
     const readingSpeed = document.getElementById('readingSpeed');
-    const textElement = document.querySelector('#test-container');
+    const textElement = document.querySelector('#pasteDiv');
     const progressText = document.getElementById('progress-text');
 
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Trim leading and trailing whitespace
             text = text.trim();
             // Insert the sanitized text into the div
-            textElement.innerHTML = text;
+            textElement.value = text;
         } catch (err) {
             textElement.textContent('Failed to read clipboard contents: ', err);
         }
