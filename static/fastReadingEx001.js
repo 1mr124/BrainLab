@@ -14,7 +14,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let elapsedTime = 0;
     let timerInterval;
 
-    const totalWords = 1920; // Total number of words
+    function countWords() {
+        // Retrieve the text from the textarea
+        const text = document.getElementById("pasteDiv").value;
+
+        // Clean the text to remove extra spaces and line breaks
+        const cleanedText = text.trim().replace(/\s+/g, ' ');
+
+        // Split the text into an array of words
+        const words = cleanedText.split(' ');
+
+        // Filter out any empty strings that may be present due to spaces
+        const filteredWords = words.filter(word => word.length > 0);
+
+        // Count the words
+        const wordCount = filteredWords.length;
+
+        // Display the word count
+        return wordCount;
+    }
+
+    
 
     function formatTime(ms) {
         const totalSeconds = Math.floor(ms / 1000);
@@ -42,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(timerInterval);
         timerInterval = null;
         const totalMinutes = elapsedTime / 1000 / 60;
-        const wordsPerMinute = totalWords / totalMinutes;
+        const wordsPerMinute = countWords() / totalMinutes;
         fullTimeDisplay.textContent = `Full Time: ${formatTime(elapsedTime)}`;
         readingSpeed.textContent = `Your Speed: ${wordsPerMinute.toFixed(2)} words per minute`;
     }
@@ -95,12 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Sanitize the clipboard content to avoid XSS
             text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            text = text.replace(/\n/g, "<br>");
 
             // Trim leading and trailing whitespace
             text = text.trim();
             // Insert the sanitized text into the div
             textElement.value = text;
+            
         } catch (err) {
             textElement.textContent('Failed to read clipboard contents: ', err);
         }
