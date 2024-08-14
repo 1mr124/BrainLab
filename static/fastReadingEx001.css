@@ -211,3 +211,20 @@ textarea{
   outline: none;
   border:none;
 }
+
+
+
+
+ /* Media query for screen widths between 1601px and 2500px */
+ @media (min-width: 1601px) and (max-width: 2500px) {
+  #test-container {
+      width: 60%;
+  }
+}
+
+/* Media query for screen widths greater than 2500px */
+@media (min-width: 2501px) {
+  #test-container {
+      width: 40%;
+  }
+}
