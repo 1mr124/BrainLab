@@ -228,3 +228,44 @@ textarea{
       width: 40%;
   }
 }
+
+
+
+
+
+
+
+
+
+ /* Basic styles for visibility control */
+ .hidden {
+  display: none !important;
+}
+
+
+
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question-label {
+  display: block;
+  font-weight: bold;
+}
+
+.options {
+  margin-left: 20px;
+}
+
+.option {
+  margin-bottom: 5px;
+}
+
+.question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

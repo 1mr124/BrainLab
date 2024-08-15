@@ -125,5 +125,39 @@ document.addEventListener('DOMContentLoaded', function() {
             textElement.textContent('Failed to read clipboard contents: ', err);
         }
     });
+
+
+
+
+
+
+
+
+
+
+    const QuizButton = document.querySelector('#QuizButton');
+
+    const con1 = document.querySelector('.container');
+    const con2 = document.querySelector('#test-container-wrapper');
+    const specificDiv = document.querySelectorAll('div#quizContainer');
+
+
+
+      function showQuiz() {
+          // Hide the initial content with an animation
+          con1.classList.add('hidden');
+          con2.classList.add('hidden');
+
+          specificDiv.forEach(div => {
+            div.classList.remove('hidden');
+        });
+
+         
+      }
+
+      // Event listener for the button
+      QuizButton.addEventListener('click', showQuiz);
+
+
 });
 
