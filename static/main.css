@@ -4,7 +4,7 @@ body {
     background: #00121e;
     
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 112.5%;
     line-height: 1.6em;
   }
@@ -290,3 +290,22 @@ body {
   }
   
   }
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  margin: 44px auto 0;
+  width: 90vw;
+  min-width: 60%;
+  max-width: 50%;
+  text-align: center;
+}

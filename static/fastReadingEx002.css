@@ -1,0 +1,84 @@
+body {
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.card {
+    width: 210px;
+    height: 110px;
+    margin: 20px auto;
+    background-color: black;
+    color: #D3D3D3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    border-radius: 3px;
+}
+
+.controller {
+    margin-top: 40px;
+}
+
+button {
+    font-size: 16px;
+    width: 115px;
+    height: 39px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    background-color:#333;
+    color: #fff;
+    cursor: pointer;
+  }
+
+
+
+#result{
+    margin-top: 20px;
+}
+#Submit{
+    margin-left: 36px;}
+
+
+
+
+
+
+.feedback {
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.feedback.correct {
+    color: #4CAF50; /* Green for correct */
+}
+
+.feedback.wrong {
+    color: red; /* Red for wrong */
+}
+
+
+
+select,input{
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+
+#controller{
+    background: transparent;
+}

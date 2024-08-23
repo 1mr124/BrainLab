@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>catch up Numbers</title>
+    <title>Catch Up Numbers</title>
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/fastReadingEx002.css">
 </head>
 <body>
-    
+    <h1>Catch Up Numbers</h1>
+
+    <div class="container">
+        <div class="exercise">
+            <div class="card" id="card">
+                <!-- Number will be displayed here -->
+            </div>
+        </div>
+
+        <div class="controller">
+            <select id="digits">
+                <option value="2">2 Digits</option>
+                <option value="3">3 Digits</option>
+                <option value="4">4 Digits</option>
+                <option value="5">5 Digits</option>
+                <option value="6">6 Digits</option>
+            </select>
+            <button onclick="startTest()">Start Test</button>
+
+            Loop<input type="checkbox" name="loop" id="controller"> 
+
+            <div id="result" style="display:none;">
+                <input type="text" id="userInput" placeholder="Enter the number">
+                <button id="Submit" onclick="checkResult()">Submit</button>
+            </div>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+
+    </div>
+
+    <script src="../static/fastReadingEx002.js"></script>
 </body>
 </html>
