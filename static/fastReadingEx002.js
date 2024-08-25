@@ -1,11 +1,11 @@
 let displayedNumber = '';
 const LoopController = document.getElementById("LoopController");
 const inputField = document.getElementById('userInput');
+const digit = document.getElementById('digits');
 
 function startTest() {
-    const digitCount = document.getElementById('digits').value;
+    const digitCount = digit.value;
     displayedNumber = generateRandomNumber(digitCount);
-
     const card = document.getElementById('card');
     card.textContent = displayedNumber;
 
@@ -52,7 +52,7 @@ function reset() {
 }
 
 
-function handleKeyPress(event) {
+function handleKeyPress(event) {    
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent the default action
         checkResult(); // Pass user input to checkResult
@@ -69,4 +69,30 @@ function handleKeyPress(event) {
 
 function begain() {
     startTest(); // Start the test
+}
+
+
+
+
+inputField.addEventListener('input', h2);
+
+
+
+function h2(e) {
+    
+    let numberOfInput = inputField.value.length;
+    
+    if (numberOfInput == digit.value ){
+
+        checkResult()
+        // Remove event listener after processing
+        inputField.removeEventListener('keypress', handleKeyPress);
+
+        // If the checkbox is checked, wait 1 second and start the test again
+        if (LoopController.checked) {
+            setTimeout(startTest, 1000); // Wait 1 second before repeating the test
+        }
+    }
+    
+    
 }
