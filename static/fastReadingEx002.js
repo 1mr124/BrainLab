@@ -12,10 +12,14 @@ function startTest() {
     setTimeout(() => {
         card.textContent = ''; // Hide the number
         document.getElementById('result').style.display = 'block';
-        document.getElementById('userInput').focus();
+        inputField.focus();
         document.getElementById('feedback').textContent = ''; // Clear feedback on new test
 
-     
+        // Clear previous event listeners to avoid duplicates
+        inputField.removeEventListener('keypress', handleKeyPress);
+        // Add event listener for user input
+        inputField.addEventListener('keypress', handleKeyPress);
+
     }, 500); // Show number for half a second
 }
 
@@ -27,6 +31,7 @@ function checkResult() {
     const feedbackElement = document.getElementById('feedback');
     let userInput = inputField.value.trim(); // Get and trim user input
 
+    console.log(userInput, " == ", displayedNumber);
 
     if (userInput === displayedNumber) {
         feedbackElement.textContent = 'Correct!';
@@ -39,36 +44,29 @@ function checkResult() {
     }
 
     reset();
-
 }
 
 function reset() {
-    document.getElementById('userInput').value = '';
+    inputField.value = '';
     document.getElementById('result').style.display = 'none';
 }
 
-function begain() {
-    function runTest() {
-        startTest(); // Start the test
 
-        // Add event listener for user input
-        const checkAndReset = function (event) {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent the default action
-                checkResult(); // Pass user input to checkResult
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action
+        checkResult(); // Pass user input to checkResult
 
-                // Remove event listener after processing
-                inputField.removeEventListener('keypress', checkAndReset);
+        // Remove event listener after processing
+        inputField.removeEventListener('keypress', handleKeyPress);
 
-                // If the checkbox is checked, wait 1 seconds and start the test again
-                if (LoopController.checked) {
-                    setTimeout(runTest, 1000); // Wait 1 seconds before repeating the test
-                }
-            }
-        };
-
-        inputField.addEventListener('keypress', checkAndReset);
+        // If the checkbox is checked, wait 1 second and start the test again
+        if (LoopController.checked) {
+            setTimeout(startTest, 1000); // Wait 1 second before repeating the test
+        }
     }
+}
 
-    runTest(); // Start the first test
+function begain() {
+    startTest(); // Start the test
 }
