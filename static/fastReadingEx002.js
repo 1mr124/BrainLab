@@ -2,9 +2,14 @@ let displayedNumber = '';
 const LoopController = document.getElementById("LoopController");
 const inputField = document.getElementById('userInput');
 const digit = document.getElementById('digits');
+const speedLevel = document.getElementById('speedLevel');
+const feedbackElement = document.getElementById('feedback');
+
+
 
 function startTest() {
     const digitCount = digit.value;
+    const speedLevelNumber = speedLevel.value;
     displayedNumber = generateRandomNumber(digitCount);
     const card = document.getElementById('card');
     card.textContent = displayedNumber;
@@ -13,14 +18,14 @@ function startTest() {
         card.textContent = ''; // Hide the number
         document.getElementById('result').style.display = 'block';
         inputField.focus();
-        document.getElementById('feedback').textContent = ''; // Clear feedback on new test
+        feedbackElement.textContent = ''; // Clear feedback on new test
 
         // Clear previous event listeners to avoid duplicates
         inputField.removeEventListener('keypress', handleKeyPress);
         // Add event listener for user input
         inputField.addEventListener('keypress', handleKeyPress);
 
-    }, 500); // Show number for half a second
+    }, speedLevelNumber); // Show number for half a second
 }
 
 function generateRandomNumber(digits) {
@@ -28,7 +33,6 @@ function generateRandomNumber(digits) {
 }
 
 function checkResult() {
-    const feedbackElement = document.getElementById('feedback');
     let userInput = inputField.value.trim(); // Get and trim user input
 
     console.log(userInput, " == ", displayedNumber);
@@ -74,11 +78,11 @@ function begain() {
 
 
 
-inputField.addEventListener('input', h2);
+inputField.addEventListener('input', autoCheckResult);
 
 
 
-function h2(e) {
+function autoCheckResult(e) {
     
     let numberOfInput = inputField.value.length;
     
