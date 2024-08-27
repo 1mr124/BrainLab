@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Up License Plate</title>
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/fastReadingEx003.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Catch Up License Plate</h1>
+
+        <div class="exercise">
+            <div class="Plate">
+                <div class="plateTop">
+                    <div class="country">EGYPT</div>
+                    <div class="arabicCountry">مصر</div>
+                </div>
+                <div class="trafficCard">
+                    <div class="numberCard">0012</div>
+                    <div class="lettersCard">م ص ر</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controller">
+            <select id="speedLevel">
+                <option value="100">100ms</option>
+                <option value="300">300ms</option>
+                <option value="500">500ms</option>
+                <option value="700">700ms</option>
+                <option value="900">900ms</option>
+            </select>
+            <button onclick="begainPlate()">Start Test</button>
+
+            Loop<input type="checkbox" name="loop" id="LoopController"> 
+
+            <div id="result" style="display:none;">
+                <input type="text" id="userInput" placeholder="Enter the number" autofocus>
+            </div>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script src="../static/fastReadingEx002.js"></script>
+</body>
+</html>

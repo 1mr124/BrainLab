@@ -15,3 +15,4 @@ setupRouting('mindGames', 'mindGames.html');
 setupRouting('morseCode', 'Morsecode.html');
 setupRouting('fastReadEx001', 'fastReadEx001.html');
 setupRouting('fastReadEx002', 'fastReadEx002.html');
+setupRouting('fastReadEx003', 'fastReadEx003.html');
