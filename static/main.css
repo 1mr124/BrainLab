@@ -306,3 +306,8 @@ body {
   max-width: 50%;
   text-align: center;
 }
+
+
+.none{
+  display: none !important; 
+}

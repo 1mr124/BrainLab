@@ -19,8 +19,17 @@
                     <div class="arabicCountry">مصر</div>
                 </div>
                 <div class="trafficCard">
-                    <div class="numberCard">0012</div>
-                    <div class="lettersCard">م ص ر</div>
+                    <div class="numberCard none">
+                        <input type="text" id="numbersInput"  autofocus>
+
+                    </div>
+                    <div class="lettersCard none">
+                        <input type="text" id="lettersInput" autofocus>
+
+                    </div>
+
+                    <div id="numberCard" class="numberCard " >0012</div>
+                    <div id="letterCard" class="lettersCard " >م ص ر </div>
                 </div>
             </div>
         </div>
@@ -33,18 +42,16 @@
                 <option value="700">700ms</option>
                 <option value="900">900ms</option>
             </select>
-            <button onclick="begainPlate()">Start Test</button>
+            <button onclick="begain()">Start Test</button>
 
             Loop<input type="checkbox" name="loop" id="LoopController"> 
 
-            <div id="result" style="display:none;">
-                <input type="text" id="userInput" placeholder="Enter the number" autofocus>
-            </div>
+            <div id="result" style="display:none;"></div>
         </div>
 
         <div id="feedback" class="feedback"></div>
     </div>
 
-    <script src="../static/fastReadingEx002.js"></script>
+    <script src="../static/fastReadingEx003.js"></script>
 </body>
 </html>
