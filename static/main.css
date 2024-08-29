@@ -311,3 +311,9 @@ body {
 .none{
   display: none !important; 
 }
+
+
+select option {
+  background-color: #333;
+  color: #fff;
+}
