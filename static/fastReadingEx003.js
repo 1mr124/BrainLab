@@ -31,7 +31,7 @@ function startTest() {
 
     cardNumber.textContent = displayedNumber;
     cardLetter.textContent = displayedLetter;
-    
+
     setTimeout(() => {
         // cardNumber.remove();// Hide the number
         // cardLetter.remove();
@@ -87,7 +87,7 @@ function checkResult() {
         feedbackElement.classList.remove('wrong');
         feedbackElement.classList.add('correct');
     } else {
-        feedbackElement.textContent = `Wrong! The correct  was ${displayedLetter} ${displayedNumber} .`;
+        feedbackElement.textContent = `Wrong! your input was ${userLetterInput} ${userNumberInput} .`;
         feedbackElement.classList.remove('correct');
         feedbackElement.classList.add('wrong');
     }
