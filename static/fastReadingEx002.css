@@ -83,3 +83,8 @@ input:focus {
 #controller{
     background: transparent;
 }
+
+
+#score {
+    font-size: .8em;
+}
