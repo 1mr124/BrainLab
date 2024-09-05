@@ -317,3 +317,29 @@ select option {
   background-color: #333;
   color: #fff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* main.css or a relevant CSS file */
+.timeline-item {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent element */
+}
+
+/* If you want specific styles when hovered or active */
+.timeline-item:hover {
+  color: #fff; /* Change color on hover */
+}
+
+.timeline-item:active {
+  color: #fff; /* Change color on click/active */
+}
